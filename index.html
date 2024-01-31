@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+</head>
+<!-- <style>
+    .input{
+    background-image: repeating-radial-gradient(
+        rgb(8, 16, 6) 60%,
+        rgb(143, 6, 6)
+    );
+}
+</style> -->
+<body>
+    <h1 class="fs-1 text-success text-center m-3">Psquad Shoprite 🎉🎁</h1>
+
+
+    <div class="input container-fluid mx-auto col-lg-7 col-10 shadow-sm mt-lg-5 p-3" style="background-color: green;" id="shopRite">
+     <input type="text" id="inp" placeholder="Input Item Name" class=" form-control shadow-none form-control w-100 my-3">
+
+     <div class="input-group flex-nowrap">
+      <span class="input-group-text mb-2" id="addon-wrapping">₦</span>
+      <input type="number" id="inpu" class="form-control mb-2" placeholder="Enter Item Price" aria-label="Item-price" aria-describedby="addon-wrapping">
+    </div>
+
+
+        <button onclick="addItems()" class="btn btn-outline-warning w-100 my-2">Add Item</button>
+
+        <div id="err" class="container-fluid mx-auto col-lg-7 text-center text-light bg-danger col-10 shadow-sm mt-lg-2 fs-5 rounded-3" style="display: none;"><b class="fs-4">!</b> Enter an Item</div>
+
+        <div id="erro" class="container-fluid mx-auto col-lg-7 text-center text-light bg-danger col-10 shadow-sm mt-lg-2 fs-5 rounded-3" style="display: none;"><b class="fs-4">!</b>Pls Input Item Price</div>
+
+        <div id="error" class="container-fluid mx-auto col-lg-7 text-center text-light col-10 shadow-sm mt-lg-2 fs-5 rounded-3" style="display: none; background-color: rgb(249, 4, 4);"><b class="fs-4">!</b>Pls Input an Item and the Price</div>
+
+        <div id="ite" class="container-fluid mx-auto col-lg-7 text-center text-light bg-danger col-10 shadow-sm mt-lg-2 fs-5 rounded-3" style="display: none;">Item list is empty</div>
+        </div>
+        </div>
+
+        <div class="container-fluid mx-auto col-lg-7 col-10 shadow-lg mt-lg-5 p-3 mt-5">
+        <div id="show">
+          <b>Your Itemlist Should Appear Here ✅</b>
+        </div>
+        <button onclick="calc()" id="ent" style="display: none;" class="btn btn-outline-success mt-3">Calculate Total Price</button>
+        </div>
+
+        <div style="display: none; background-color: orange;" class="container-fluid mx-auto col-lg-7 col-10 shadow-sm mt-3 pt-3 pb-3" id="totalDisplay"></div>
+
+        <div id="ente" class="container-fluid mx-auto col-lg-7 text-center text-dark col-10 shadow-sm mt-lg-2 fs-5 rounded-3" style="display: none; background-color: rgb(208, 255, 0);"><b class="fs-4">!</b>Item list's Price is Empty</div>
+
+
+        <div id="buttons" style="display: none;" class="container-fluid mx-auto col-lg-7 col-10 shadow-md mt-sm-2 p-2">
+            <div class="text-center">
+            <!-- <button onclick="firstItem()" class="btn btn-outline-danger mt-3">Remove first Item</button> -->
+            <!-- <button onclick="lastItem()" class="btn btn-outline-dark mt-3">Remove last Item</button> -->
+            <!-- <button onclick="sumItem()" class="btn btn-outline-success mt-3">Add as first Item</button> -->
+            <button onclick="delItem()" id="deleteAll" class="col-lg-5 col-8 btn btn-outline-danger mt-3">Delete All</button>
+            <!-- <button onclick="editItem()" class="btn btn-outline-primary mt-3">Edit</button> -->
+            </div>
+
+            <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Your Item & Your Price ☺</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="why" class="container-fluid mx-auto col-lg-7 text-center text-light bg-danger col-10 shadow-sm md-2 fs-5 rounded-3" style="display: none;"><b class="fs-4">!</b>Pls fill in all fields.</div>
+        <label for="newItem">New Item Name:</label>
+        <input type="text" class="form-control" id="newItem">
+        <label for="newPrice">New Item Price:</label>
+        <input type="number" class="form-control" id="newPrice">
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        <button onclick="saveEditedItem()" class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+        </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
